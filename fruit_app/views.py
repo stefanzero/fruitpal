@@ -1,12 +1,12 @@
-from django.shortcuts import render
-
-from rest_framework.decorators import api_view
+# from django.shortcuts import render
+# from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Commodity_Data
 from .serializers import CommodityDataSerializer
 from functools import partial
-import json
+# import json
+import operator
 import decimal
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
@@ -80,21 +80,20 @@ def calculate(request, format='json'):
     print(commodities)
     map_function = partial(compute_costs, tons=tons, price=price)
     results = list(map(map_function, commodities))
-    print('results')
-    print(results)
+    results.sort(key=operator.itemgetter('total_cost'), reverse=True)
     # results.sort(key=lambda x: x.total_cost, reverse=True)
+    # print('results')
+    # print(results)
     return Response(results, status=status.HTTP_200_OK)
-    # results_json = list(map(json.dumps, results))
-    # return Response({"data": results_json})
 
 
 def compute_costs(data, tons, price):
     total_cost = tons * (price + data.variable_cost) + data.fixed_overhead
-    fixed_cost = data.fixed_overhead
+    fixed_overhead = data.fixed_overhead
     variable_cost = price + data.variable_cost
     return {
         "country_code": data.country,
         "total_cost": total_cost,
+        "fixed_overhead": fixed_overhead,
         "variable_cost": variable_cost,
-        "fixed_cost": fixed_cost
     }
