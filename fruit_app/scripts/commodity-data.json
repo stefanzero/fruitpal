@@ -1,0 +1,92 @@
+[
+  {
+    "commodity": "Lychees",
+    "country": "KR",
+    "fixed_overhead": 340.61,
+    "variable_cost": 85.54
+  },
+  {
+    "commodity": "Lychees",
+    "country": "ZW",
+    "fixed_overhead": 532.86,
+    "variable_cost": 28.52
+  },
+  {
+    "commodity": "Lychees",
+    "country": "PA",
+    "fixed_overhead": 376.69,
+    "variable_cost": 66.75
+  },
+  {
+    "commodity": "Lychees",
+    "country": "HU",
+    "fixed_overhead": 404.7,
+    "variable_cost": 77.25
+  },
+  {
+    "commodity": "Lychees",
+    "country": "BO",
+    "fixed_overhead": 702.35,
+    "variable_cost": 22.2
+  },
+  {
+    "commodity": "Pomegranates",
+    "country": "PH",
+    "fixed_overhead": 743.89,
+    "variable_cost": 50.57
+  },
+  {
+    "commodity": "Pomegranates",
+    "country": "CA",
+    "fixed_overhead": 134.45,
+    "variable_cost": 15.99
+  },
+  {
+    "commodity": "Pomegranates",
+    "country": "AU",
+    "fixed_overhead": 301.38,
+    "variable_cost": 30.7
+  },
+  {
+    "commodity": "Pomegranates",
+    "country": "AR",
+    "fixed_overhead": 922.54,
+    "variable_cost": 74.93
+  },
+  {
+    "commodity": "Pomegranates",
+    "country": "SV",
+    "fixed_overhead": 109.89,
+    "variable_cost": 45.83
+  },
+  {
+    "commodity": "Mango",
+    "country": "PG",
+    "fixed_overhead": 216.18,
+    "variable_cost": 58.78
+  },
+  {
+    "commodity": "Mango",
+    "country": "JP",
+    "fixed_overhead": 603.22,
+    "variable_cost": 95.62
+  },
+  {
+    "commodity": "Mango",
+    "country": "ZM",
+    "fixed_overhead": 865.76,
+    "variable_cost": 32.2
+  },
+  {
+    "commodity": "Mango",
+    "country": "SL",
+    "fixed_overhead": 335.8,
+    "variable_cost": 20.83
+  },
+  {
+    "commodity": "Mango",
+    "country": "SI",
+    "fixed_overhead": 242.88,
+    "variable_cost": 67.89
+  }
+]

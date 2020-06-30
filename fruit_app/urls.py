@@ -14,6 +14,11 @@ urlpatterns = [
         name='get_post_commodity_data'
     ),
     url(
+        r'^api/v1/commodities/$',
+        views.get_commodities,
+        name='get_commodities'
+    ),
+    url(
         r'^api/v1/calculate/$',
         views.calculate,
         name='calculate'

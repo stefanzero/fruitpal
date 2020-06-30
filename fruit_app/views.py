@@ -10,6 +10,7 @@ import json
 import decimal
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+from .serializers import MyJSONRenderer
 
 
 @api_view(['GET', 'DELETE', 'PUT'])
@@ -42,6 +43,13 @@ def get_post_commodity_data(request):
         return Response({})
 
 
+@api_view(['GET', 'DELETE', 'PUT'])
+@renderer_classes([JSONRenderer])
+def get_commodities(request):
+    commodity_list = list(Commodity_Data.objects.values('commodity').distinct())
+    commodities = list(map(lambda x: x.commodity, commodity_list))
+    return Response(commodities)
+
 '''
 total cost = number of tons * (price per ton + variable cost) + fixed cost
 variable cost (at this price point) = price per ton + variable cost per ton
@@ -54,7 +62,7 @@ Return JSON array sorted by total cost descending:
 '''
 
 @api_view(('GET',))
-@renderer_classes([JSONRenderer])
+@renderer_classes([MyJSONRenderer])
 def calculate(request, format='json'):
     commodity = request.GET.get('COMMODITY')
     price = request.GET.get('PRICE')

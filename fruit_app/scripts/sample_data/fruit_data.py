@@ -19,7 +19,8 @@ def get():
     fruits_json = json.dumps(fruits, indent = 2, separators=(',', ': '))
     # print(fruits_json)
 
-    # with open('fruits.json', 'w') as output_file:
-    #     output_file.write(fruits_json)
+    json_path = os.path.join(os.path.dirname(__file__), 'fruits.json')
+    with open(json_path, 'w') as output_file:
+        output_file.write(fruits_json)
 
-    return fruits_json
+    return fruits
