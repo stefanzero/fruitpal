@@ -2,14 +2,14 @@
 # from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Commodity_Data
-from .serializers import CommodityDataSerializer
+from .models import Commodity_Data, Country
+from .serializers import CommodityDataSerializer, CountrySerializer
 from functools import partial
-# import json
 import operator
 import decimal
 from rest_framework.decorators import api_view, renderer_classes
-from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+# from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+from rest_framework.renderers import JSONRenderer
 from .serializers import MyJSONRenderer
 
 
@@ -20,14 +20,21 @@ def get_delete_update_commodity_data(request, pk):
     except Commodity_Data.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    # get details of a single item
+    # get details of a single commodity_data
     if request.method == 'GET':
-        return Response({})
-    # delete a single puppy
+        serializer = CommodityDataSerializer(commodity_data)
+        return Response(serializer.data)
+
+    # update details of a single commodity_data
+    if request.method == 'PUT':
+        serializer = CommodityDataSerializer(commodity_data, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # delete a single commodity_data
     elif request.method == 'DELETE':
-        return Response({})
-    # update details of a single item
-    elif request.method == 'PUT':
         return Response({})
 
 
@@ -47,7 +54,7 @@ def get_post_commodity_data(request):
 @renderer_classes([JSONRenderer])
 def get_commodities(request):
     commodity_list = list(Commodity_Data.objects.values('commodity').distinct())
-    commodities = list(map(lambda x: x.commodity, commodity_list))
+    commodities = list(map(lambda x: x['commodity'], commodity_list))
     return Response(commodities)
 
 '''
@@ -97,3 +104,42 @@ def compute_costs(data, tons, price):
         "fixed_overhead": fixed_overhead,
         "variable_cost": variable_cost,
     }
+
+
+@api_view(['GET', 'DELETE', 'PUT'])
+def get_delete_update_country(request, pk):
+    try:
+        country = Country.objects.get(pk=pk)
+    except Country.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    # get details of a single country
+    if request.method == 'GET':
+        serializer = CountrySerializer(country)
+        return Response(serializer.data)
+
+    # update details of a single country
+    if request.method == 'PUT':
+        serializer = CountrySerializer(country, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # delete a single country
+    elif request.method == 'DELETE':
+        return Response({})
+
+
+@api_view(['GET', 'POST'])
+def get_post_country(request):
+    # get all items
+    if request.method == 'GET':
+        countries = Country.objects.all()
+        serializer = CountrySerializer(countries, many=True)
+        return Response(serializer.data)
+    # insert a new record for a items
+    elif request.method == 'POST':
+        return Response({})
+
+

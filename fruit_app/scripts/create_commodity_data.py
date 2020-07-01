@@ -40,7 +40,7 @@ def run(*args):
     # print('num_countries = {}'.format(num_countries))
     # print('num_fruits = {}'.format(num_fruits))
 
-    country_dict = country_data.get()
+    country_dict = country_data.get_country_dict()
     countries = country_dict.keys()
     # print(countries)
     fruits = fruit_data.get()
