@@ -25,6 +25,8 @@ class MyJSONEncoder(DjangoJSONEncoder):
     def default(self, o):
         if isinstance(o, (decimal.Decimal, uuid.UUID, Promise)):
             return '{:.2f}'.format(o)
+        elif isinstance(o, Country):
+            return Country.country_code
         else:
             return super().default(o)
 

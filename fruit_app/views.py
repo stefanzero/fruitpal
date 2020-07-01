@@ -99,7 +99,7 @@ def compute_costs(data, tons, price):
     fixed_overhead = data.fixed_overhead
     variable_cost = price + data.variable_cost
     return {
-        "country_code": data.country,
+        "country": data.country.country_code,
         "total_cost": total_cost,
         "fixed_overhead": fixed_overhead,
         "variable_cost": variable_cost,
