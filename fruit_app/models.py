@@ -7,6 +7,45 @@ from django.db.models.constraints import CheckConstraint
 from django.db.models import Q
 import re
 
+class Country(models.Model):
+
+    class Meta:
+        constraints = [
+            CheckConstraint(check=Q(country_code__regex=r'^[a-zA-Z]{2,2}'), name='country_2_letter_code'),
+            CheckConstraint(check=Q(name__regex=r'^[a-zA-Z\s]+$'), name='country_name'),
+        ]
+
+    country_code = models.CharField(
+        primary_key=True,
+        max_length = 2,
+        help_text = '2-letter Country abbreviation',
+        blank=False
+    )
+    name = models.CharField(
+        max_length = 64,
+        blank=False
+    )
+
+    def clean(self, *args, **kwargs):
+        if re.match(r'^[a-zA-Z]{2,2}$', self.country_code) is None:
+            raise ValidationError('country must be 2 letters')
+        '''
+        convert country to upper case
+        '''
+        self.country_code = self.country_code.upper()
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super(Country, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.__repr__()
+
+    def __repr__(self):
+        model_dict = model_to_dict(self)
+        return json.dumps(model_dict)
+
+
 class Commodity_Data(models.Model):
     """
     Commodity_Data Model
@@ -18,16 +57,18 @@ class Commodity_Data(models.Model):
     class Meta:
         unique_together = (('country', 'commodity'),)
         constraints = [
-            CheckConstraint(check=Q(country__regex=r'^[a-zA-Z]{2,2}'), name='country_2_letter_code'),
+            # CheckConstraint(check=Q(country__regex=r'^[a-zA-Z]{2,2}'), name='country_2_letter_code'),
             CheckConstraint(check=Q(fixed_overhead__gte=0), name='fixed_overhead_not_negative'),
             CheckConstraint(check=Q(variable_cost__gte=0), name='variable_cost_not_negative'),
         ]
 
-    country = models.CharField(
-        max_length = 2,
-        help_text = '2-letter Country abbreviation',
-        blank=False
+    country = models.ForeignKey(
+        Country,
+        db_column='country',
+        related_name='country',
+        on_delete=models.CASCADE
         )
+
     commodity = models.CharField(
         max_length=255,
         blank=False
@@ -68,41 +109,4 @@ class Commodity_Data(models.Model):
         return json.dumps(model_dict, cls=DjangoJSONEncoder)
 
 
-class Country(models.Model):
-
-    class Meta:
-        constraints = [
-            CheckConstraint(check=Q(country__regex=r'^[a-zA-Z]{2,2}'), name='country_2_letter_code'),
-            CheckConstraint(check=Q(name__regex=r'^[a-zA-Z\s]+$'), name='country_name'),
-        ]
-
-    country = models.CharField(
-        primary_key=True,
-        max_length = 2,
-        help_text = '2-letter Country abbreviation',
-        blank=False
-    )
-    name = models.CharField(
-        max_length = 64,
-        blank=False
-    )
-
-    def clean(self, *args, **kwargs):
-        if re.match(r'^[a-zA-Z]{2,2}$', self.country) is None:
-            raise ValidationError('country must be 2 letters')
-        '''
-        convert country to upper case
-        '''
-        self.country = self.country.upper()
-
-    def save(self, *args, **kwargs):
-        self.full_clean()
-        super(Country, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.__repr__()
-
-    def __repr__(self):
-        model_dict = model_to_dict(self)
-        return json.dumps(model_dict)
 
