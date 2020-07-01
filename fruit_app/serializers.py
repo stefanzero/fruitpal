@@ -14,9 +14,11 @@ class CommodityDataSerializer(serializers.ModelSerializer):
 
 
 class CountrySerializer(serializers.ModelSerializer):
+    country_code = serializers.StringRelatedField(many=False)
+
     class Meta:
         model = Country
-        fields = ('country', 'name')
+        fields = ('country_code', 'name')
 
 
 class MyJSONEncoder(DjangoJSONEncoder):

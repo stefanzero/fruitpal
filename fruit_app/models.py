@@ -85,12 +85,6 @@ class Commodity_Data(models.Model):
         )
 
     def clean(self, *args, **kwargs):
-        if re.match(r'^[a-zA-Z]{2,2}$', self.country) is None:
-            raise ValidationError('country must be 2 letters')
-        '''
-        convert country to upper case
-        '''
-        self.country = self.country.upper()
         if (self.fixed_overhead < 0):
             raise ValidationError('fixed_overhead must be >= 0')
         if (self.variable_cost < 0):
