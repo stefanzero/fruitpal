@@ -82,9 +82,10 @@ def calculate(request, format='json'):
     commodity = commodity.strip('"').strip("'")
     price = decimal.Decimal(price) if price is not None else 0
     tons = decimal.Decimal(tons) if tons is not None else 0
-    print('commodity "{}"'.format(commodity))
-    commodities = list(Commodity_Data.objects.filter(commodity=commodity))
-    print(commodities)
+    # print('commodity "{}"'.format(commodity))
+    # commodities = list(Commodity_Data.objects.filter(commodity=commodity))
+    commodities = list(Commodity_Data.objects.filter(commodity__iexact=commodity))
+    # print(commodities)
     map_function = partial(compute_costs, tons=tons, price=price)
     results = list(map(map_function, commodities))
     results.sort(key=operator.itemgetter('total_cost'), reverse=True)

@@ -89,10 +89,9 @@ class Commodity_Data(models.Model):
             raise ValidationError('fixed_overhead must be >= 0')
         if (self.variable_cost < 0):
             raise ValidationError('fixed_overhead must be >= 0')
-        # super(BaseModel, self).clean(*args, **kwargs)
 
     def save(self, *args, **kwargs):
-        self.full_clean()
+        self.clean()
         super(Commodity_Data, self).save(*args, **kwargs)
 
     def __str__(self):

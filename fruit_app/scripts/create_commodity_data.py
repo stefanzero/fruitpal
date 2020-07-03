@@ -48,11 +48,16 @@ def run(*args):
     if num_fruits > len(fruits):
         print('using maximum number of fruits')
         num_fruits = len(fruits)
+    if num_countries > len(countries):
+        print('using maximum number of countries')
+        num_countries = len(countries)
     random_fruits = random.sample(fruits, num_fruits)
     # print(random_fruits)
     Commodity_Data = namedtuple('Commodity_Data', 'country commodity fixed_overhead, variable_cost')
     commodity_list = []
     for fruit in random_fruits:
+        if fruit.lower() == 'mango':
+            continue
         random_countries = random.sample(countries, num_countries)
         print(fruit, random_countries)
         for country in random_countries:

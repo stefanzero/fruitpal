@@ -1,92 +1,1172 @@
 [
   {
-    "country": "CH",
-    "commodity": "Passionfruit",
-    "fixed_overhead": 382.46,
-    "variable_cost": 17.35
+    "country": "TM",
+    "commodity": "Gooseberry",
+    "fixed_overhead": 329.78,
+    "variable_cost": 92.52
   },
   {
-    "country": "RU",
-    "commodity": "Passionfruit",
-    "fixed_overhead": 664.24,
-    "variable_cost": 29.39
+    "country": "SE",
+    "commodity": "Gooseberry",
+    "fixed_overhead": 995.58,
+    "variable_cost": 63.0
   },
   {
-    "country": "NI",
-    "commodity": "Passionfruit",
-    "fixed_overhead": 785.21,
-    "variable_cost": 48.31
+    "country": "CA",
+    "commodity": "Gooseberry",
+    "fixed_overhead": 605.19,
+    "variable_cost": 34.26
   },
   {
-    "country": "SG",
-    "commodity": "Passionfruit",
-    "fixed_overhead": 465.43,
-    "variable_cost": 26.3
+    "country": "ID",
+    "commodity": "Gooseberry",
+    "fixed_overhead": 395.3,
+    "variable_cost": 76.39
+  },
+  {
+    "country": "WS",
+    "commodity": "Gooseberry",
+    "fixed_overhead": 299.39,
+    "variable_cost": 61.16
+  },
+  {
+    "country": "UA",
+    "commodity": "Jackfruit",
+    "fixed_overhead": 234.19,
+    "variable_cost": 91.85
+  },
+  {
+    "country": "RW",
+    "commodity": "Jackfruit",
+    "fixed_overhead": 804.49,
+    "variable_cost": 28.18
+  },
+  {
+    "country": "PE",
+    "commodity": "Jackfruit",
+    "fixed_overhead": 603.86,
+    "variable_cost": 38.83
   },
   {
     "country": "MZ",
-    "commodity": "Passionfruit",
-    "fixed_overhead": 282.21,
-    "variable_cost": 86.51
+    "commodity": "Jackfruit",
+    "fixed_overhead": 889.48,
+    "variable_cost": 11.12
+  },
+  {
+    "country": "PF",
+    "commodity": "Jackfruit",
+    "fixed_overhead": 799.58,
+    "variable_cost": 43.05
+  },
+  {
+    "country": "BZ",
+    "commodity": "Dates",
+    "fixed_overhead": 278.88,
+    "variable_cost": 68.05
+  },
+  {
+    "country": "ZW",
+    "commodity": "Dates",
+    "fixed_overhead": 437.5,
+    "variable_cost": 29.22
+  },
+  {
+    "country": "BR",
+    "commodity": "Dates",
+    "fixed_overhead": 703.32,
+    "variable_cost": 25.61
+  },
+  {
+    "country": "TM",
+    "commodity": "Dates",
+    "fixed_overhead": 417.24,
+    "variable_cost": 96.78
+  },
+  {
+    "country": "PK",
+    "commodity": "Dates",
+    "fixed_overhead": 957.54,
+    "variable_cost": 51.37
+  },
+  {
+    "country": "BZ",
+    "commodity": "Custard Apple",
+    "fixed_overhead": 837.02,
+    "variable_cost": 56.14
+  },
+  {
+    "country": "GN",
+    "commodity": "Custard Apple",
+    "fixed_overhead": 653.22,
+    "variable_cost": 46.27
+  },
+  {
+    "country": "SK",
+    "commodity": "Custard Apple",
+    "fixed_overhead": 871.36,
+    "variable_cost": 80.89
+  },
+  {
+    "country": "MQ",
+    "commodity": "Custard Apple",
+    "fixed_overhead": 977.62,
+    "variable_cost": 74.64
+  },
+  {
+    "country": "PA",
+    "commodity": "Custard Apple",
+    "fixed_overhead": 988.49,
+    "variable_cost": 48.23
+  },
+  {
+    "country": "NZ",
+    "commodity": "Pomelo",
+    "fixed_overhead": 116.65,
+    "variable_cost": 43.81
+  },
+  {
+    "country": "LK",
+    "commodity": "Pomelo",
+    "fixed_overhead": 989.91,
+    "variable_cost": 33.22
+  },
+  {
+    "country": "EG",
+    "commodity": "Pomelo",
+    "fixed_overhead": 793.58,
+    "variable_cost": 50.9
+  },
+  {
+    "country": "GA",
+    "commodity": "Pomelo",
+    "fixed_overhead": 492.63,
+    "variable_cost": 81.82
+  },
+  {
+    "country": "SR",
+    "commodity": "Pomelo",
+    "fixed_overhead": 822.36,
+    "variable_cost": 80.02
+  },
+  {
+    "country": "MX",
+    "commodity": "Apricot",
+    "fixed_overhead": 760.92,
+    "variable_cost": 11.8
+  },
+  {
+    "country": "HU",
+    "commodity": "Apricot",
+    "fixed_overhead": 720.03,
+    "variable_cost": 46.57
+  },
+  {
+    "country": "PK",
+    "commodity": "Apricot",
+    "fixed_overhead": 321.39,
+    "variable_cost": 44.36
+  },
+  {
+    "country": "SI",
+    "commodity": "Apricot",
+    "fixed_overhead": 894.94,
+    "variable_cost": 41.82
+  },
+  {
+    "country": "GT",
+    "commodity": "Apricot",
+    "fixed_overhead": 728.44,
+    "variable_cost": 27.79
+  },
+  {
+    "country": "IN",
+    "commodity": "Durian",
+    "fixed_overhead": 361.57,
+    "variable_cost": 40.88
+  },
+  {
+    "country": "LV",
+    "commodity": "Durian",
+    "fixed_overhead": 326.18,
+    "variable_cost": 14.05
+  },
+  {
+    "country": "BZ",
+    "commodity": "Durian",
+    "fixed_overhead": 681.42,
+    "variable_cost": 39.5
+  },
+  {
+    "country": "TW",
+    "commodity": "Durian",
+    "fixed_overhead": 659.04,
+    "variable_cost": 59.9
+  },
+  {
+    "country": "GP",
+    "commodity": "Durian",
+    "fixed_overhead": 350.69,
+    "variable_cost": 89.32
+  },
+  {
+    "country": "RS",
+    "commodity": "Star apple",
+    "fixed_overhead": 393.05,
+    "variable_cost": 73.1
+  },
+  {
+    "country": "NI",
+    "commodity": "Star apple",
+    "fixed_overhead": 699.88,
+    "variable_cost": 90.49
+  },
+  {
+    "country": "RU",
+    "commodity": "Star apple",
+    "fixed_overhead": 263.72,
+    "variable_cost": 62.32
+  },
+  {
+    "country": "JM",
+    "commodity": "Star apple",
+    "fixed_overhead": 487.41,
+    "variable_cost": 80.82
+  },
+  {
+    "country": "PA",
+    "commodity": "Star apple",
+    "fixed_overhead": 406.63,
+    "variable_cost": 94.36
+  },
+  {
+    "country": "SR",
+    "commodity": "Plums",
+    "fixed_overhead": 910.51,
+    "variable_cost": 76.34
+  },
+  {
+    "country": "TH",
+    "commodity": "Plums",
+    "fixed_overhead": 550.66,
+    "variable_cost": 94.62
   },
   {
     "country": "EE",
-    "commodity": "Figs",
-    "fixed_overhead": 903.07,
-    "variable_cost": 22.26
+    "commodity": "Plums",
+    "fixed_overhead": 720.69,
+    "variable_cost": 24.53
   },
   {
-    "country": "FR",
-    "commodity": "Figs",
-    "fixed_overhead": 291.94,
-    "variable_cost": 71.14
+    "country": "SG",
+    "commodity": "Plums",
+    "fixed_overhead": 473.44,
+    "variable_cost": 47.24
   },
   {
-    "country": "BG",
-    "commodity": "Figs",
-    "fixed_overhead": 390.89,
-    "variable_cost": 18.09
+    "country": "PF",
+    "commodity": "Plums",
+    "fixed_overhead": 746.3,
+    "variable_cost": 73.98
+  },
+  {
+    "country": "UA",
+    "commodity": "Mandarins",
+    "fixed_overhead": 655.62,
+    "variable_cost": 99.84
+  },
+  {
+    "country": "GH",
+    "commodity": "Mandarins",
+    "fixed_overhead": 502.16,
+    "variable_cost": 85.03
+  },
+  {
+    "country": "IT",
+    "commodity": "Mandarins",
+    "fixed_overhead": 568.59,
+    "variable_cost": 17.69
+  },
+  {
+    "country": "BR",
+    "commodity": "Mandarins",
+    "fixed_overhead": 987.18,
+    "variable_cost": 32.65
+  },
+  {
+    "country": "SL",
+    "commodity": "Mandarins",
+    "fixed_overhead": 418.82,
+    "variable_cost": 49.49
+  },
+  {
+    "country": "SR",
+    "commodity": "Grapes",
+    "fixed_overhead": 243.3,
+    "variable_cost": 39.71
+  },
+  {
+    "country": "HN",
+    "commodity": "Grapes",
+    "fixed_overhead": 171.6,
+    "variable_cost": 30.97
+  },
+  {
+    "country": "PG",
+    "commodity": "Grapes",
+    "fixed_overhead": 190.09,
+    "variable_cost": 61.31
+  },
+  {
+    "country": "CM",
+    "commodity": "Grapes",
+    "fixed_overhead": 742.75,
+    "variable_cost": 82.12
+  },
+  {
+    "country": "MN",
+    "commodity": "Grapes",
+    "fixed_overhead": 541.28,
+    "variable_cost": 25.94
+  },
+  {
+    "country": "NO",
+    "commodity": "Apple",
+    "fixed_overhead": 789.05,
+    "variable_cost": 39.1
+  },
+  {
+    "country": "KE",
+    "commodity": "Apple",
+    "fixed_overhead": 456.16,
+    "variable_cost": 43.42
+  },
+  {
+    "country": "PF",
+    "commodity": "Apple",
+    "fixed_overhead": 965.4,
+    "variable_cost": 82.59
+  },
+  {
+    "country": "MA",
+    "commodity": "Apple",
+    "fixed_overhead": 904.32,
+    "variable_cost": 34.97
+  },
+  {
+    "country": "PA",
+    "commodity": "Apple",
+    "fixed_overhead": 115.47,
+    "variable_cost": 81.81
+  },
+  {
+    "country": "SD",
+    "commodity": "Persimmons",
+    "fixed_overhead": 703.32,
+    "variable_cost": 15.71
+  },
+  {
+    "country": "EE",
+    "commodity": "Persimmons",
+    "fixed_overhead": 786.03,
+    "variable_cost": 99.74
+  },
+  {
+    "country": "ID",
+    "commodity": "Persimmons",
+    "fixed_overhead": 676.56,
+    "variable_cost": 94.65
+  },
+  {
+    "country": "PT",
+    "commodity": "Persimmons",
+    "fixed_overhead": 491.73,
+    "variable_cost": 89.8
+  },
+  {
+    "country": "RS",
+    "commodity": "Persimmons",
+    "fixed_overhead": 925.76,
+    "variable_cost": 42.6
+  },
+  {
+    "country": "CZ",
+    "commodity": "Pineapple",
+    "fixed_overhead": 950.47,
+    "variable_cost": 36.86
+  },
+  {
+    "country": "GA",
+    "commodity": "Pineapple",
+    "fixed_overhead": 112.65,
+    "variable_cost": 73.4
+  },
+  {
+    "country": "NI",
+    "commodity": "Pineapple",
+    "fixed_overhead": 396.49,
+    "variable_cost": 57.62
+  },
+  {
+    "country": "JM",
+    "commodity": "Pineapple",
+    "fixed_overhead": 297.8,
+    "variable_cost": 22.08
+  },
+  {
+    "country": "FI",
+    "commodity": "Pineapple",
+    "fixed_overhead": 189.83,
+    "variable_cost": 63.17
+  },
+  {
+    "country": "GB",
+    "commodity": "Pomegranates",
+    "fixed_overhead": 332.95,
+    "variable_cost": 87.01
+  },
+  {
+    "country": "TN",
+    "commodity": "Pomegranates",
+    "fixed_overhead": 688.12,
+    "variable_cost": 22.04
+  },
+  {
+    "country": "ZM",
+    "commodity": "Pomegranates",
+    "fixed_overhead": 370.55,
+    "variable_cost": 96.5
+  },
+  {
+    "country": "SE",
+    "commodity": "Pomegranates",
+    "fixed_overhead": 378.88,
+    "variable_cost": 81.74
+  },
+  {
+    "country": "KE",
+    "commodity": "Pomegranates",
+    "fixed_overhead": 742.69,
+    "variable_cost": 68.69
+  },
+  {
+    "country": "PH",
+    "commodity": "Peaches",
+    "fixed_overhead": 767.57,
+    "variable_cost": 60.87
+  },
+  {
+    "country": "PG",
+    "commodity": "Peaches",
+    "fixed_overhead": 816.18,
+    "variable_cost": 37.23
+  },
+  {
+    "country": "TW",
+    "commodity": "Peaches",
+    "fixed_overhead": 905.51,
+    "variable_cost": 79.17
+  },
+  {
+    "country": "TR",
+    "commodity": "Peaches",
+    "fixed_overhead": 198.63,
+    "variable_cost": 32.98
+  },
+  {
+    "country": "EG",
+    "commodity": "Peaches",
+    "fixed_overhead": 525.1,
+    "variable_cost": 96.86
   },
   {
     "country": "SN",
+    "commodity": "Avocado",
+    "fixed_overhead": 160.18,
+    "variable_cost": 71.73
+  },
+  {
+    "country": "TM",
+    "commodity": "Avocado",
+    "fixed_overhead": 147.26,
+    "variable_cost": 20.38
+  },
+  {
+    "country": "NZ",
+    "commodity": "Avocado",
+    "fixed_overhead": 344.48,
+    "variable_cost": 15.06
+  },
+  {
+    "country": "MZ",
+    "commodity": "Avocado",
+    "fixed_overhead": 845.3,
+    "variable_cost": 54.6
+  },
+  {
+    "country": "NP",
+    "commodity": "Avocado",
+    "fixed_overhead": 388.71,
+    "variable_cost": 44.0
+  },
+  {
+    "country": "KR",
+    "commodity": "Kiwifruit",
+    "fixed_overhead": 374.01,
+    "variable_cost": 20.66
+  },
+  {
+    "country": "ZM",
+    "commodity": "Kiwifruit",
+    "fixed_overhead": 190.8,
+    "variable_cost": 49.61
+  },
+  {
+    "country": "FI",
+    "commodity": "Kiwifruit",
+    "fixed_overhead": 934.82,
+    "variable_cost": 91.14
+  },
+  {
+    "country": "TN",
+    "commodity": "Kiwifruit",
+    "fixed_overhead": 170.7,
+    "variable_cost": 42.37
+  },
+  {
+    "country": "RO",
+    "commodity": "Kiwifruit",
+    "fixed_overhead": 379.23,
+    "variable_cost": 67.57
+  },
+  {
+    "country": "DO",
+    "commodity": "Canteloupe",
+    "fixed_overhead": 106.9,
+    "variable_cost": 94.86
+  },
+  {
+    "country": "IN",
+    "commodity": "Canteloupe",
+    "fixed_overhead": 340.41,
+    "variable_cost": 12.85
+  },
+  {
+    "country": "SK",
+    "commodity": "Canteloupe",
+    "fixed_overhead": 114.24,
+    "variable_cost": 89.39
+  },
+  {
+    "country": "CL",
+    "commodity": "Canteloupe",
+    "fixed_overhead": 187.8,
+    "variable_cost": 90.71
+  },
+  {
+    "country": "PT",
+    "commodity": "Canteloupe",
+    "fixed_overhead": 593.5,
+    "variable_cost": 53.1
+  },
+  {
+    "country": "HN",
+    "commodity": "Rambutans",
+    "fixed_overhead": 242.24,
+    "variable_cost": 88.47
+  },
+  {
+    "country": "SA",
+    "commodity": "Rambutans",
+    "fixed_overhead": 264.58,
+    "variable_cost": 63.96
+  },
+  {
+    "country": "GP",
+    "commodity": "Rambutans",
+    "fixed_overhead": 149.71,
+    "variable_cost": 90.53
+  },
+  {
+    "country": "GH",
+    "commodity": "Rambutans",
+    "fixed_overhead": 403.46,
+    "variable_cost": 57.56
+  },
+  {
+    "country": "ZA",
+    "commodity": "Rambutans",
+    "fixed_overhead": 615.12,
+    "variable_cost": 76.0
+  },
+  {
+    "country": "MA",
+    "commodity": "Blackberry",
+    "fixed_overhead": 553.21,
+    "variable_cost": 58.16
+  },
+  {
+    "country": "SA",
+    "commodity": "Blackberry",
+    "fixed_overhead": 535.43,
+    "variable_cost": 58.29
+  },
+  {
+    "country": "ZM",
+    "commodity": "Blackberry",
+    "fixed_overhead": 267.22,
+    "variable_cost": 82.85
+  },
+  {
+    "country": "EC",
+    "commodity": "Blackberry",
+    "fixed_overhead": 824.08,
+    "variable_cost": 67.36
+  },
+  {
+    "country": "RS",
+    "commodity": "Blackberry",
+    "fixed_overhead": 215.39,
+    "variable_cost": 76.83
+  },
+  {
+    "country": "UY",
+    "commodity": "Kumquat",
+    "fixed_overhead": 551.14,
+    "variable_cost": 81.01
+  },
+  {
+    "country": "DE",
+    "commodity": "Kumquat",
+    "fixed_overhead": 474.53,
+    "variable_cost": 72.63
+  },
+  {
+    "country": "SN",
+    "commodity": "Kumquat",
+    "fixed_overhead": 943.34,
+    "variable_cost": 48.96
+  },
+  {
+    "country": "IL",
+    "commodity": "Kumquat",
+    "fixed_overhead": 745.15,
+    "variable_cost": 68.54
+  },
+  {
+    "country": "KE",
+    "commodity": "Kumquat",
+    "fixed_overhead": 253.15,
+    "variable_cost": 14.06
+  },
+  {
+    "country": "KR",
+    "commodity": "Tamarillos",
+    "fixed_overhead": 488.27,
+    "variable_cost": 51.36
+  },
+  {
+    "country": "KE",
+    "commodity": "Tamarillos",
+    "fixed_overhead": 203.78,
+    "variable_cost": 39.99
+  },
+  {
+    "country": "NG",
+    "commodity": "Tamarillos",
+    "fixed_overhead": 370.33,
+    "variable_cost": 21.39
+  },
+  {
+    "country": "TW",
+    "commodity": "Tamarillos",
+    "fixed_overhead": 998.37,
+    "variable_cost": 68.4
+  },
+  {
+    "country": "SD",
+    "commodity": "Tamarillos",
+    "fixed_overhead": 500.89,
+    "variable_cost": 58.34
+  },
+  {
+    "country": "WS",
+    "commodity": "Lemon",
+    "fixed_overhead": 612.82,
+    "variable_cost": 52.35
+  },
+  {
+    "country": "FR",
+    "commodity": "Lemon",
+    "fixed_overhead": 315.54,
+    "variable_cost": 99.12
+  },
+  {
+    "country": "ZW",
+    "commodity": "Lemon",
+    "fixed_overhead": 236.29,
+    "variable_cost": 23.53
+  },
+  {
+    "country": "SA",
+    "commodity": "Lemon",
+    "fixed_overhead": 462.15,
+    "variable_cost": 57.72
+  },
+  {
+    "country": "JM",
+    "commodity": "Lemon",
+    "fixed_overhead": 131.76,
+    "variable_cost": 49.21
+  },
+  {
+    "country": "MX",
+    "commodity": "Cherry",
+    "fixed_overhead": 969.69,
+    "variable_cost": 81.8
+  },
+  {
+    "country": "CL",
+    "commodity": "Cherry",
+    "fixed_overhead": 470.48,
+    "variable_cost": 60.3
+  },
+  {
+    "country": "SA",
+    "commodity": "Cherry",
+    "fixed_overhead": 973.7,
+    "variable_cost": 44.84
+  },
+  {
+    "country": "SV",
+    "commodity": "Cherry",
+    "fixed_overhead": 825.32,
+    "variable_cost": 91.73
+  },
+  {
+    "country": "NP",
+    "commodity": "Cherry",
+    "fixed_overhead": 654.8,
+    "variable_cost": 98.45
+  },
+  {
+    "country": "SV",
+    "commodity": "Bananas",
+    "fixed_overhead": 245.13,
+    "variable_cost": 94.08
+  },
+  {
+    "country": "CH",
+    "commodity": "Bananas",
+    "fixed_overhead": 286.13,
+    "variable_cost": 45.26
+  },
+  {
+    "country": "VN",
+    "commodity": "Bananas",
+    "fixed_overhead": 965.22,
+    "variable_cost": 78.38
+  },
+  {
+    "country": "MZ",
+    "commodity": "Bananas",
+    "fixed_overhead": 143.17,
+    "variable_cost": 62.33
+  },
+  {
+    "country": "BZ",
+    "commodity": "Bananas",
+    "fixed_overhead": 103.92,
+    "variable_cost": 48.11
+  },
+  {
+    "country": "IT",
+    "commodity": "Strawberry",
+    "fixed_overhead": 638.52,
+    "variable_cost": 92.2
+  },
+  {
+    "country": "SG",
+    "commodity": "Strawberry",
+    "fixed_overhead": 903.61,
+    "variable_cost": 52.52
+  },
+  {
+    "country": "BZ",
+    "commodity": "Strawberry",
+    "fixed_overhead": 438.49,
+    "variable_cost": 39.61
+  },
+  {
+    "country": "SD",
+    "commodity": "Strawberry",
+    "fixed_overhead": 298.46,
+    "variable_cost": 77.9
+  },
+  {
+    "country": "RU",
+    "commodity": "Strawberry",
+    "fixed_overhead": 881.98,
+    "variable_cost": 39.94
+  },
+  {
+    "country": "VE",
+    "commodity": "Grapefruit",
+    "fixed_overhead": 437.2,
+    "variable_cost": 10.36
+  },
+  {
+    "country": "TT",
+    "commodity": "Grapefruit",
+    "fixed_overhead": 724.6,
+    "variable_cost": 64.32
+  },
+  {
+    "country": "SR",
+    "commodity": "Grapefruit",
+    "fixed_overhead": 994.74,
+    "variable_cost": 91.79
+  },
+  {
+    "country": "JM",
+    "commodity": "Grapefruit",
+    "fixed_overhead": 978.33,
+    "variable_cost": 76.25
+  },
+  {
+    "country": "SI",
+    "commodity": "Grapefruit",
+    "fixed_overhead": 937.13,
+    "variable_cost": 46.62
+  },
+  {
+    "country": "TM",
+    "commodity": "Pear",
+    "fixed_overhead": 969.71,
+    "variable_cost": 21.44
+  },
+  {
+    "country": "MG",
+    "commodity": "Pear",
+    "fixed_overhead": 589.79,
+    "variable_cost": 16.61
+  },
+  {
+    "country": "CR",
+    "commodity": "Pear",
+    "fixed_overhead": 603.65,
+    "variable_cost": 22.87
+  },
+  {
+    "country": "PT",
+    "commodity": "Pear",
+    "fixed_overhead": 692.61,
+    "variable_cost": 45.25
+  },
+  {
+    "country": "GU",
+    "commodity": "Pear",
+    "fixed_overhead": 426.5,
+    "variable_cost": 48.17
+  },
+  {
+    "country": "UA",
+    "commodity": "Papaya",
+    "fixed_overhead": 388.93,
+    "variable_cost": 64.41
+  },
+  {
+    "country": "RS",
+    "commodity": "Papaya",
+    "fixed_overhead": 501.05,
+    "variable_cost": 83.24
+  },
+  {
+    "country": "UG",
+    "commodity": "Papaya",
+    "fixed_overhead": 883.55,
+    "variable_cost": 53.8
+  },
+  {
+    "country": "HU",
+    "commodity": "Papaya",
+    "fixed_overhead": 785.08,
+    "variable_cost": 76.05
+  },
+  {
+    "country": "GA",
+    "commodity": "Papaya",
+    "fixed_overhead": 398.66,
+    "variable_cost": 79.39
+  },
+  {
+    "country": "EE",
+    "commodity": "Passionfruit",
+    "fixed_overhead": 278.43,
+    "variable_cost": 22.09
+  },
+  {
+    "country": "MN",
+    "commodity": "Passionfruit",
+    "fixed_overhead": 694.92,
+    "variable_cost": 95.5
+  },
+  {
+    "country": "MA",
+    "commodity": "Passionfruit",
+    "fixed_overhead": 807.68,
+    "variable_cost": 13.93
+  },
+  {
+    "country": "EG",
+    "commodity": "Passionfruit",
+    "fixed_overhead": 254.74,
+    "variable_cost": 84.26
+  },
+  {
+    "country": "VE",
+    "commodity": "Passionfruit",
+    "fixed_overhead": 217.95,
+    "variable_cost": 26.51
+  },
+  {
+    "country": "GN",
+    "commodity": "Watermelon",
+    "fixed_overhead": 978.86,
+    "variable_cost": 21.19
+  },
+  {
+    "country": "ID",
+    "commodity": "Watermelon",
+    "fixed_overhead": 700.5,
+    "variable_cost": 60.52
+  },
+  {
+    "country": "GP",
+    "commodity": "Watermelon",
+    "fixed_overhead": 404.16,
+    "variable_cost": 38.59
+  },
+  {
+    "country": "UG",
+    "commodity": "Watermelon",
+    "fixed_overhead": 256.6,
+    "variable_cost": 36.89
+  },
+  {
+    "country": "MK",
+    "commodity": "Watermelon",
+    "fixed_overhead": 343.62,
+    "variable_cost": 15.46
+  },
+  {
+    "country": "JM",
+    "commodity": "Nectarine",
+    "fixed_overhead": 601.47,
+    "variable_cost": 36.6
+  },
+  {
+    "country": "BR",
+    "commodity": "Nectarine",
+    "fixed_overhead": 686.88,
+    "variable_cost": 16.92
+  },
+  {
+    "country": "TT",
+    "commodity": "Nectarine",
+    "fixed_overhead": 855.29,
+    "variable_cost": 83.46
+  },
+  {
+    "country": "PF",
+    "commodity": "Nectarine",
+    "fixed_overhead": 792.19,
+    "variable_cost": 26.87
+  },
+  {
+    "country": "RU",
+    "commodity": "Nectarine",
+    "fixed_overhead": 142.36,
+    "variable_cost": 63.34
+  },
+  {
+    "country": "GF",
+    "commodity": "Lychees",
+    "fixed_overhead": 822.14,
+    "variable_cost": 41.35
+  },
+  {
+    "country": "ID",
+    "commodity": "Lychees",
+    "fixed_overhead": 661.06,
+    "variable_cost": 53.3
+  },
+  {
+    "country": "GB",
+    "commodity": "Lychees",
+    "fixed_overhead": 515.71,
+    "variable_cost": 56.2
+  },
+  {
+    "country": "TT",
+    "commodity": "Lychees",
+    "fixed_overhead": 210.68,
+    "variable_cost": 47.67
+  },
+  {
+    "country": "BE",
+    "commodity": "Lychees",
+    "fixed_overhead": 598.57,
+    "variable_cost": 33.35
+  },
+  {
+    "country": "ES",
+    "commodity": "Mangosteen",
+    "fixed_overhead": 985.11,
+    "variable_cost": 83.6
+  },
+  {
+    "country": "RW",
+    "commodity": "Mangosteen",
+    "fixed_overhead": 555.58,
+    "variable_cost": 91.93
+  },
+  {
+    "country": "HN",
+    "commodity": "Mangosteen",
+    "fixed_overhead": 589.44,
+    "variable_cost": 89.49
+  },
+  {
+    "country": "VN",
+    "commodity": "Mangosteen",
+    "fixed_overhead": 663.44,
+    "variable_cost": 28.59
+  },
+  {
+    "country": "SV",
+    "commodity": "Mangosteen",
+    "fixed_overhead": 340.22,
+    "variable_cost": 37.77
+  },
+  {
+    "country": "PR",
+    "commodity": "Sapodillas",
+    "fixed_overhead": 483.0,
+    "variable_cost": 38.19
+  },
+  {
+    "country": "NG",
+    "commodity": "Sapodillas",
+    "fixed_overhead": 776.62,
+    "variable_cost": 16.04
+  },
+  {
+    "country": "JP",
+    "commodity": "Sapodillas",
+    "fixed_overhead": 869.32,
+    "variable_cost": 26.21
+  },
+  {
+    "country": "GQ",
+    "commodity": "Sapodillas",
+    "fixed_overhead": 255.32,
+    "variable_cost": 77.56
+  },
+  {
+    "country": "JM",
+    "commodity": "Sapodillas",
+    "fixed_overhead": 699.28,
+    "variable_cost": 62.33
+  },
+  {
+    "country": "RS",
+    "commodity": "Guava",
+    "fixed_overhead": 466.91,
+    "variable_cost": 82.95
+  },
+  {
+    "country": "ZA",
+    "commodity": "Guava",
+    "fixed_overhead": 910.0,
+    "variable_cost": 39.1
+  },
+  {
+    "country": "VE",
+    "commodity": "Guava",
+    "fixed_overhead": 970.98,
+    "variable_cost": 51.76
+  },
+  {
+    "country": "CR",
+    "commodity": "Guava",
+    "fixed_overhead": 959.17,
+    "variable_cost": 39.27
+  },
+  {
+    "country": "JM",
+    "commodity": "Guava",
+    "fixed_overhead": 878.69,
+    "variable_cost": 86.52
+  },
+  {
+    "country": "GH",
     "commodity": "Figs",
-    "fixed_overhead": 251.58,
-    "variable_cost": 45.9
+    "fixed_overhead": 408.41,
+    "variable_cost": 59.81
+  },
+  {
+    "country": "MG",
+    "commodity": "Figs",
+    "fixed_overhead": 605.23,
+    "variable_cost": 23.17
+  },
+  {
+    "country": "MX",
+    "commodity": "Figs",
+    "fixed_overhead": 787.89,
+    "variable_cost": 88.09
+  },
+  {
+    "country": "IN",
+    "commodity": "Figs",
+    "fixed_overhead": 438.02,
+    "variable_cost": 54.31
   },
   {
     "country": "KH",
     "commodity": "Figs",
-    "fixed_overhead": 523.39,
-    "variable_cost": 13.78
+    "fixed_overhead": 184.35,
+    "variable_cost": 17.94
   },
   {
-    "country": "PT",
-    "commodity": "Star apple",
-    "fixed_overhead": 159.68,
-    "variable_cost": 83.09
+    "country": "MA",
+    "commodity": "Oranges",
+    "fixed_overhead": 388.76,
+    "variable_cost": 44.92
   },
   {
-    "country": "IE",
-    "commodity": "Star apple",
-    "fixed_overhead": 376.18,
-    "variable_cost": 80.49
+    "country": "SN",
+    "commodity": "Oranges",
+    "fixed_overhead": 444.53,
+    "variable_cost": 19.86
   },
   {
-    "country": "GT",
-    "commodity": "Star apple",
-    "fixed_overhead": 480.41,
-    "variable_cost": 12.17
+    "country": "GR",
+    "commodity": "Oranges",
+    "fixed_overhead": 983.86,
+    "variable_cost": 57.0
   },
   {
-    "country": "SL",
-    "commodity": "Star apple",
-    "fixed_overhead": 192.35,
-    "variable_cost": 25.42
+    "country": "LK",
+    "commodity": "Oranges",
+    "fixed_overhead": 169.74,
+    "variable_cost": 31.26
   },
   {
-    "country": "UG",
-    "commodity": "Star apple",
-    "fixed_overhead": 985.39,
-    "variable_cost": 56.27
+    "country": "MZ",
+    "commodity": "Oranges",
+    "fixed_overhead": 267.68,
+    "variable_cost": 93.3
   }
 ]

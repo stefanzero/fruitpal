@@ -10,7 +10,7 @@ from django.utils.functional import Promise
 class CommodityDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = Commodity_Data
-        fields = ('country', 'commodity', 'fixed_overhead', 'variable_cost')
+        fields = ('id', 'country', 'commodity', 'fixed_overhead', 'variable_cost')
 
 
 class CountrySerializer(serializers.ModelSerializer):
