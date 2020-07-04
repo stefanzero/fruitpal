@@ -25,7 +25,11 @@ SECRET_KEY = '6)=!q&teg6_!8y$w*!e5e9!@z7-vt47xo-$gv!1erwu60kly0o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'fruitpal.stefanzero.com'
+]
 
 
 # Application definition

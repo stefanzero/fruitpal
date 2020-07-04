@@ -26,6 +26,7 @@ from django.urls import path
 from .views import home
 
 urlpatterns = [
+    path('', home),
     path('home/', home),
     url(r'^', include('fruit_app.urls')),
     url(
