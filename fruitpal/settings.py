@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+# If this app is served on Web Faction hosting, a different STATIC_ROOT
+# will be used
+if os.path.exists('/home/stefan0/webapps'):
+    is_web_faction = False
+else:
+    is_web_faction = True
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -152,6 +159,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if is_web_faction:
+    STATIC_ROOT = '/home/stefan0/webapps/fruitpal_static/'
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
