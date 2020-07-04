@@ -15,9 +15,9 @@ import os
 # If this app is served on Web Faction hosting, a different STATIC_ROOT
 # will be used
 if os.path.exists('/home/stefan0/webapps'):
-    is_web_faction = False
-else:
     is_web_faction = True
+else:
+    is_web_faction = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
