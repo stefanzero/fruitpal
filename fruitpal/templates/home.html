@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>fruitpal.stefanzero.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.css">
+    <style>
+        .fruitpal .card-title {
+            padding: 0.5em 0.5em;
+        }
+        .my-links {
+            padding: 0 0;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 0.2em 0 0 0.5em;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        a p {
+            margin: 0 0;
+        }
+        a p:first-child {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-Home
+<div class="card fruitpal">
+    <div class="card-header">
+        <h2><a href="/home">fruitipal.stefanzero.com</a></h2>
+    </div>
+    <div class="card-body">
+        <img class="card-img-top" src="/static/Venice_Vegetables.png">
+        <div>
+            <h4 class="card-title border bg-light">Python Django REST-API Endpoints</h4>
+            <ul class="list-group my-links">
+                <li class="list-group-item  list-group-item-primary">
+                    <a href="/api/v1/countries" target="_blank">
+                        <p>/api/v1/countries</p>
+                        <p>Display country codes and country names</p>
+                    </a>
+                </li>
+                <li class="list-group-item  list-group-item-success">
+                    <a href="/api/v1/countries" target="_blank">
+                        <p>/api/v1/commodities</p>
+                        <p>Display current commodities</p>
+                    </a>
+                </li>
+                <li class="list-group-item  list-group-item-warning">
+                    <a href="/api/v1/commodity_data" target="_blank">
+                        <p>/api/v1/commodity_data</p>
+                        <p>Display current commodity data</p>
+                    </a>
+                </li>
+                <li class="list-group-item  list-group-item-danger">
+                    <a href="/api/v1/commodity_data" target="_blank">
+                        <p>/api/v1/calculate/?COMMODITY=mango&TONS=405&PRICE=53</p>
+                        <div>Calculate price breakdown for:
+                            <ul>
+                                <li>COMMODITY=mango</li>
+                                <li>TONS=405</li>
+                                <li>PRICE=53</li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
