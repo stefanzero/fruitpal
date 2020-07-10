@@ -7,6 +7,9 @@ from django.db.models.constraints import CheckConstraint
 from django.db.models import Q
 import re
 
+"""Models for the Django application fruit_app
+These classes represent the database tables.
+"""
 
 class Country(models.Model):
     """Model for a Country.  Primary key is the 2-letter code.
@@ -17,27 +20,36 @@ class Country(models.Model):
         https://gist.github.com/ssskip/5a94bfcd2835bf1dea52
 
     Note:
-        Data for the Country model must be populated before entering
-        CommodityData, since the Country is a ForeignKey.
+        Country is a Foreign Key for the CommodityData model, so the
+        appropriate Country entry must be saved to the database before
+        the CommodityData can be created.
 
     Attributes:
-        country_code (str) 2-letter country code, must be unique
-        name (str) Full name of the country
+        country_code (str)
+            2-letter country code, must be unique
+        name (str)
+            Full name of the country
+        Meta (class)
+            The Meta class contains Django model directives
+
+            Attributes:
+               app_label (str)
+                   Name of the app
+               constraints (list)
+
+                   1)  the country_code must be 2 letters
+
+                   2)  the name can only contain letters or spaces
+
+    **Detailed Member Documentation**
 
     """
+
     name = 'Country'
 
     class Meta:
-        """The metaclass contains database constraints
+        """The metaclass contains database constraints"""
 
-       Attributes:
-           app_label (str) Name of the app
-           constraints (list) The first constraint is that the
-               country_code must be 2 letters.  The second constraint
-               is that the name of the country can only contain letters
-               or spaces.
-
-        """
         app_label = 'fruit_app'
 
         constraints = [
@@ -60,6 +72,8 @@ class Country(models.Model):
     )
 
     def clean(self, *args, **kwargs):
+        """Validate country_code and convert to upper case
+        """
         if re.match(r'^[a-zA-Z]{2}$', self.country_code) is None:
             raise ValidationError('country must be 2 letters')
         '''
@@ -68,6 +82,8 @@ class Country(models.Model):
         self.country_code = self.country_code.upper()
 
     def save(self, *args, **kwargs):
+        """Override default to call clean before super.save
+        """
         self.full_clean()
         super(Country, self).save(*args, **kwargs)
 
@@ -75,9 +91,8 @@ class Country(models.Model):
         return self.__repr__()
 
     def __repr__(self):
-        """
+        """Represent the model as a JSON dictionary of its members.
 
-        :return:
         """
         model_dict = model_to_dict(self)
         return json.dumps(model_dict)
