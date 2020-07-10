@@ -15,6 +15,12 @@ from .serializers import MyJSONRenderer
 
 @api_view(['GET', 'DELETE', 'PUT'])
 def get_delete_update_commodity_data(request, pk):
+    '''
+
+    :param request:
+    :param pk:
+    :return:
+    '''
     try:
         commodity_data = Commodity_Data.objects.get(pk=pk)
     except Commodity_Data.DoesNotExist:
@@ -71,6 +77,10 @@ Return JSON array sorted by total cost descending:
 @api_view(('GET',))
 @renderer_classes([MyJSONRenderer])
 def calculate(request, format='json'):
+    """
+
+    :rtype: object
+    """
     commodity = request.GET.get('COMMODITY')
     price = request.GET.get('PRICE')
     tons = request.GET.get('TONS')
@@ -96,6 +106,13 @@ def calculate(request, format='json'):
 
 
 def compute_costs(data, tons, price):
+    """
+
+    :param data:
+    :param tons:
+    :param price:
+    :return:
+    """
     total_cost = tons * (price + data.variable_cost) + data.fixed_overhead
     fixed_overhead = data.fixed_overhead
     variable_cost = price + data.variable_cost
