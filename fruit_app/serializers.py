@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Commodity_Data, Country
+from .models import CommodityData, Country
 from rest_framework import renderers
 from django.core.serializers.json import DjangoJSONEncoder
 import decimal
@@ -9,7 +9,7 @@ from django.utils.functional import Promise
 
 class CommodityDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Commodity_Data
+        model = CommodityData
         fields = ('id', 'country', 'commodity', 'fixed_overhead', 'variable_cost')
 
 

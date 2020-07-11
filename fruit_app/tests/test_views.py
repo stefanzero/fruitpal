@@ -2,7 +2,7 @@ import json
 from rest_framework import status
 from django.test import TestCase, Client
 from django.urls import reverse
-from ..models import Commodity_Data
+from ..models import CommodityData
 from ..serializers import CommodityDataSerializer
 from .set_up import set_up_mango
 import decimal
@@ -12,23 +12,23 @@ import decimal
 client = Client()
 
 class GetAllCommodityDataTest(TestCase):
-    """ Test module for GET all commodity_data API """
+    """ Test module for GET all commoditydata API """
 
     def setUp(self):
         set_up_mango()
 
-    def test_get_all_commodity_data(self):
+    def test_get_all_commoditydata(self):
         # get API response
-        response = client.get(reverse('get_post_commodity_data'))
+        response = client.get(reverse('get_post_commoditydata'))
         # get data from db
-        commodity_data = Commodity_Data.objects.all()
-        serializer = CommodityDataSerializer(commodity_data, many=True)
+        commoditydata = CommodityData.objects.all()
+        serializer = CommodityDataSerializer(commoditydata, many=True)
         self.assertEqual(response.data, serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 class CalculateTest(TestCase):
-    """ Test module for GET all commodity_data API """
+    """ Test module for GET all commoditydata API """
 
     def setUp(self):
         set_up_mango()

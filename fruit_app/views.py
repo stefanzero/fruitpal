@@ -2,7 +2,7 @@
 # from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Commodity_Data, Country
+from .models import CommodityData, Country
 from .serializers import CommodityDataSerializer, CountrySerializer
 from functools import partial
 import operator
@@ -14,7 +14,7 @@ from .serializers import MyJSONRenderer
 
 
 @api_view(['GET', 'DELETE', 'PUT'])
-def get_delete_update_commodity_data(request, pk):
+def get_delete_update_commoditydata(request, pk):
     '''
 
     :param request:
@@ -22,34 +22,34 @@ def get_delete_update_commodity_data(request, pk):
     :return:
     '''
     try:
-        commodity_data = Commodity_Data.objects.get(pk=pk)
-    except Commodity_Data.DoesNotExist:
+        commoditydata = CommodityData.objects.get(pk=pk)
+    except CommodityData.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    # get details of a single commodity_data
+    # get details of a single commoditydata
     if request.method == 'GET':
-        serializer = CommodityDataSerializer(commodity_data)
+        serializer = CommodityDataSerializer(commoditydata)
         return Response(serializer.data)
 
-    # update details of a single commodity_data
+    # update details of a single commoditydata
     if request.method == 'PUT':
-        serializer = CommodityDataSerializer(commodity_data, data=request.data)
+        serializer = CommodityDataSerializer(commoditydata, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # delete a single commodity_data
+    # delete a single commoditydata
     elif request.method == 'DELETE':
         return Response({})
 
 
 @api_view(['GET', 'POST'])
-def get_post_commodity_data(request):
+def get_post_commoditydata(request):
     # get all items
     if request.method == 'GET':
-        commodity_data = Commodity_Data.objects.all()
-        serializer = CommodityDataSerializer(commodity_data, many=True)
+        commoditydata = CommodityData.objects.all()
+        serializer = CommodityDataSerializer(commoditydata, many=True)
         return Response(serializer.data)
     # insert a new record for a items
     elif request.method == 'POST':
@@ -59,7 +59,7 @@ def get_post_commodity_data(request):
 @api_view(['GET', 'DELETE', 'PUT'])
 @renderer_classes([JSONRenderer])
 def get_commodities(request):
-    commodity_list = list(Commodity_Data.objects.values('commodity').distinct())
+    commodity_list = list(CommodityData.objects.values('commodity').distinct())
     commodities = list(map(lambda x: x['commodity'], commodity_list))
     return Response(commodities)
 
@@ -93,8 +93,8 @@ def calculate(request, format='json'):
     price = decimal.Decimal(price) if price is not None else 0
     tons = decimal.Decimal(tons) if tons is not None else 0
     # print('commodity "{}"'.format(commodity))
-    # commodities = list(Commodity_Data.objects.filter(commodity=commodity))
-    commodities = list(Commodity_Data.objects.filter(commodity__iexact=commodity))
+    # commodities = list(CommodityData.objects.filter(commodity=commodity))
+    commodities = list(CommodityData.objects.filter(commodity__iexact=commodity))
     # print(commodities)
     map_function = partial(compute_costs, tons=tons, price=price)
     results = list(map(map_function, commodities))

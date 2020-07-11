@@ -23,7 +23,7 @@ def run(*args):
     arg_dict = reduce(parse_keywords, args, {})
     # print('arg_dict', arg_dict)
     if not arg_dict['num_fruits'] and not arg_dict['num_countries']:
-        print('Usage: python manage.py runscript create_commodity_data --script-args num_fruits=n num_countries=m')
+        print('Usage: python manage.py runscript create_commoditydata --script-args num_fruits=n num_countries=m')
         return
     num_fruits = arg_dict['num_fruits']
     try:
@@ -53,7 +53,7 @@ def run(*args):
         num_countries = len(countries)
     random_fruits = random.sample(fruits, num_fruits)
     # print(random_fruits)
-    Commodity_Data = namedtuple('Commodity_Data', 'country commodity fixed_overhead, variable_cost')
+    CommodityData = namedtuple('CommodityData', 'country commodity fixed_overhead, variable_cost')
     commodity_list = []
     for fruit in random_fruits:
         if fruit.lower() == 'mango':
@@ -63,7 +63,7 @@ def run(*args):
         for country in random_countries:
             fixed_overhead = get_random_value(2)
             variable_cost = get_random_value(1)
-            cd = Commodity_Data(
+            cd = CommodityData(
                 commodity=fruit, country=country,
                 fixed_overhead=fixed_overhead,
                 variable_cost=variable_cost)

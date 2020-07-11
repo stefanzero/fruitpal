@@ -1,4 +1,4 @@
-from ..models import Country, Commodity_Data
+from ..models import Country, CommodityData
 import decimal
 
 
@@ -14,13 +14,13 @@ def set_up_mango():
     mexico = Country.objects.get(country_code='MX')
     brazil = Country.objects.get(country_code='BR')
 
-    Commodity_Data.objects.create(
+    CommodityData.objects.create(
         country=mexico,
         commodity='mango',
         fixed_overhead=decimal.Decimal(32.00),
         variable_cost=decimal.Decimal(1.24)
     )
-    Commodity_Data.objects.create(
+    CommodityData.objects.create(
         country=brazil,
         commodity='mango',
         fixed_overhead=decimal.Decimal(20.00),

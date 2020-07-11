@@ -4,14 +4,14 @@ from . import views
 
 urlpatterns = [
     url(
-        r'^api/v1/commodity_data/(?P<pk>[0-9]+)$',
-        views.get_delete_update_commodity_data,
-        name='get_delete_update_commodity_data'
+        r'^api/v1/commoditydata/(?P<pk>[0-9]+)$',
+        views.get_delete_update_commoditydata,
+        name='get_delete_update_commoditydata'
     ),
     url(
-        r'^api/v1/commodity_data/$',
-        views.get_post_commodity_data,
-        name='get_post_commodity_data'
+        r'^api/v1/commoditydata/$',
+        views.get_post_commoditydata,
+        name='get_post_commoditydata'
     ),
     url(
         r'^api/v1/commodities/$',

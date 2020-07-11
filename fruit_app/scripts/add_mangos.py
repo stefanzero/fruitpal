@@ -1,4 +1,4 @@
-from ..models import Commodity_Data
+from ..models import CommodityData
 import decimal
 import os
 import json
@@ -7,13 +7,13 @@ import json
 def run():
     commodities = get_mangos()
     for commodity in commodities:
-        commodity_data = Commodity_Data()
-        commodity_data.country = commodity['country']
-        commodity_data.commodity = commodity['commodity']
-        commodity_data.fixed_overhead = decimal.Decimal(commodity['fixed_overhead'])
-        commodity_data.variable_cost=decimal.Decimal(commodity['variable_cost'])
+        commoditydata = CommodityData()
+        commoditydata.country = commodity['country']
+        commoditydata.commodity = commodity['commodity']
+        commoditydata.fixed_overhead = decimal.Decimal(commodity['fixed_overhead'])
+        commoditydata.variable_cost=decimal.Decimal(commodity['variable_cost'])
         try:
-            commodity_data.save()
+            commoditydata.save()
         except:
             print('{} from {} already exists'.format(
                 commodity['commodity'], commodity['country']))
@@ -35,8 +35,8 @@ def get_mangos():
         },
     ]
 
-def read_commodity_data():
+def read_commoditydata():
     json_path = os.path.join(os.path.dirname(__file__), 'commodity-data.json')
     with open(json_path, 'r') as input_file:
-        commodity_data = json.load(input_file)
+        commoditydata = json.load(input_file)
 

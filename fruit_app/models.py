@@ -98,9 +98,9 @@ class Country(models.Model):
         return json.dumps(model_dict)
 
 
-class Commodity_Data(models.Model):
+class CommodityData(models.Model):
     """
-    Commodity_Data Model
+    CommodityData Model
     Defines the attributes of a commodity
 
     example:
@@ -148,7 +148,7 @@ class Commodity_Data(models.Model):
 
     def save(self, *args, **kwargs):
         self.clean()
-        super(Commodity_Data, self).save(*args, **kwargs)
+        super(CommodityData, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.__repr__()
