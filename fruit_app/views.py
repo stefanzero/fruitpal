@@ -15,12 +15,17 @@ from .serializers import MyJSONRenderer
 
 @api_view(['GET', 'DELETE', 'PUT'])
 def get_delete_update_commoditydata(request, pk):
-    '''
+    """Restframework API get/delete/put endpoint the CommodityData model
 
-    :param request:
-    :param pk:
-    :return:
-    '''
+
+    Args:
+        pk (int): Database Id of item in the table
+          fruit_app_commoditydata
+
+    Returns:
+        str: HTML page with an HTML form
+
+    """
     try:
         commoditydata = CommodityData.objects.get(pk=pk)
     except CommodityData.DoesNotExist:
@@ -46,6 +51,17 @@ def get_delete_update_commoditydata(request, pk):
 
 @api_view(['GET', 'POST'])
 def get_post_commoditydata(request):
+    """Restframework API post endpoint the CommodityData model
+
+
+    Args:
+        pk (int)
+            Database Id of item in the table fruit_app_commoditydata
+
+    Returns:
+        str: HTML page with an HTML form
+
+    """
     # get all items
     if request.method == 'GET':
         commoditydata = CommodityData.objects.all()
@@ -59,27 +75,40 @@ def get_post_commoditydata(request):
 @api_view(['GET', 'DELETE', 'PUT'])
 @renderer_classes([JSONRenderer])
 def get_commodities(request):
+    """API get endpoint to return JSON array of commodities
+
+
+    Returns:
+        str: JSON array of commodities
+
+    """
     commodity_list = list(CommodityData.objects.values('commodity').distinct())
     commodities = list(map(lambda x: x['commodity'], commodity_list))
     return Response(commodities)
 
-'''
-total cost = number of tons * (price per ton + variable cost) + fixed cost
-variable cost (at this price point) = price per ton + variable cost per ton
-
-Return JSON array sorted by total cost descending:
-* country code
-* total cost of purchase
-* variable cost
-* fixed cost
-'''
 
 @api_view(('GET',))
 @renderer_classes([MyJSONRenderer])
 def calculate(request, format='json'):
-    """
+    """API get endpoint to calculate the cost for a trade request
 
-    :rtype: object
+    total cost = number of tons * (price per ton + variable cost) + fixed cost
+    variable cost (at this price point) = price per ton + variable cost per ton
+
+    Return JSON array sorted by total cost descending:
+    * country code
+    * total cost of purchase
+    * variable cost
+    * fixed cost
+
+    Args:
+        request (Request)
+            Request must have query parameters for COMMODITY, PRICE, and
+            TONS
+
+    Returns:
+        str: JSON object
+
     """
     commodity = request.GET.get('COMMODITY')
     price = request.GET.get('PRICE')
@@ -106,7 +135,10 @@ def calculate(request, format='json'):
 
 
 def compute_costs(data, tons, price):
-    """
+    """Helper function for calculate
+
+    Args:
+        data (dict)
 
     :param data:
     :param tons:
@@ -126,6 +158,17 @@ def compute_costs(data, tons, price):
 
 @api_view(['GET', 'DELETE', 'PUT'])
 def get_delete_update_country(request, pk):
+    """Restframework API get/delete/put endpoint the Country model
+
+
+    Args:
+        pk (int): Database Id of item in the table
+          fruit_app_country
+
+    Returns:
+        str: HTML page with an HTML form
+
+    """
     try:
         country = Country.objects.get(pk=pk)
     except Country.DoesNotExist:
@@ -151,6 +194,16 @@ def get_delete_update_country(request, pk):
 
 @api_view(['GET', 'POST'])
 def get_post_country(request):
+    """Restframework API post endpoint the Country model
+
+
+    Args:
+        request (Request)
+
+    Returns:
+        str: HTML page with an HTML form
+
+    """
     # get all items
     if request.method == 'GET':
         countries = Country.objects.all()

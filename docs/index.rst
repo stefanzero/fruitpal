@@ -10,6 +10,7 @@ Contents:
    :maxdepth: 2
 
    modules/models
+   modules/views
 
 
 Indices and tables
