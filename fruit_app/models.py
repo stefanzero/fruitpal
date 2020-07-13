@@ -26,7 +26,7 @@ class Country(models.Model):
 
     Attributes:
         country_code (str)
-            2-letter country code, must be unique
+            2-letter country code is the Primary Key (must be unique)
         name (str)
             Full name of the country
         Meta (class)
@@ -34,7 +34,7 @@ class Country(models.Model):
 
             Attributes:
                app_label (str)
-                   Name of the app
+                   Name of the app (required by Sphinx package)
                constraints (list)
 
                    1)  the country_code must be 2 letters
@@ -88,24 +88,56 @@ class Country(models.Model):
         super(Country, self).save(*args, **kwargs)
 
     def __str__(self):
+        """Return JSON string of model dictionary
+        """
         return self.__repr__()
 
     def __repr__(self):
         """Represent the model as a JSON dictionary of its members.
-
         """
         model_dict = model_to_dict(self)
         return json.dumps(model_dict)
 
 
 class CommodityData(models.Model):
-    """
-    CommodityData Model
-    Defines the attributes of a commodity
+    """Model for a CommodityData item.
 
-    example:
-    "COUNTRY":"MX", "COMMODITY":"mango", "FIXED_OVERHEAD":"32.00",
-    "VARIABLE_COST":"1.24"
+    Attributes:
+        country (ForeignKey)
+            instance of Country model
+        commodity (str)
+            name of the commodity
+        fixed_overhead (decimal 8.2)
+            cost in U.S. dollars for a trade for this country and commodity
+        variable_cost (decimal 8.2)
+            cost in U.S. dollars for an additional ton
+        Meta (class)
+            The Meta class contains Django model directives
+
+            Attributes:
+               app_label (str)
+                   Name of the app (required by Sphinx package)
+               constraints (list)
+
+                   1)  country and commodity combination must be  unique
+
+                   2)  fixed_overhead must be >= 0
+
+                   3)  variable_cost must be >= 0
+
+
+    Note:
+        * country and commodity combination must be unique
+        * decimal values are limited to 99999.99
+        * fixed_overhead must be >= 0
+        * variable_cost must be >=0
+
+    Example Item as JSON:
+        "COUNTRY":"MX", "COMMODITY":"mango", "FIXED_OVERHEAD":"32.00",
+        "VARIABLE_COST":"1.24"
+
+    **Detailed Member Documentation**
+
     """
 
     class Meta:
@@ -151,8 +183,12 @@ class CommodityData(models.Model):
         super(CommodityData, self).save(*args, **kwargs)
 
     def __str__(self):
+        """Return JSON string of model dictionary
+        """
         return self.__repr__()
 
     def __repr__(self):
+        """Represent the model as a JSON dictionary of its members.
+        """
         model_dict = model_to_dict(self)
         return json.dumps(model_dict, cls=DjangoJSONEncoder)

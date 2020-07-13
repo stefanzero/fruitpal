@@ -1,6 +1,7 @@
 Welcome to fruitpal's documentation!
 ====================================
 
+.. include:: ../README.rst
 
 Contents:
 
