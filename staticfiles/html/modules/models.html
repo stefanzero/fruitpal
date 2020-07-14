@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models &#8212; fruitpal 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to fruitpal’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="country-model">
+<h2>Country Model<a class="headerlink" href="#country-model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">fruit_app.models.</code><code class="sig-name descname">Country</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Model for a Country.  Primary key is the 2-letter code.</p>
+<dl class="simple">
+<dt>Country codes are described in Wikipedia:</dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></p>
+</dd>
+<dt>The JSON string for this object is found at:</dt><dd><p><a class="reference external" href="https://gist.github.com/ssskip/5a94bfcd2835bf1dea52">https://gist.github.com/ssskip/5a94bfcd2835bf1dea52</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Country is a Foreign Key for the CommodityData model, so the
+appropriate Country entry must be saved to the database before
+the CommodityData can be created.</p>
+</div>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">country_code</code></dt>
+<dd><p>2-letter country code is the Primary Key (must be unique)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">name</code></dt>
+<dd><p>Full name of the country</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">Meta</code></dt>
+<dd><p>The Meta class contains Django model directives</p>
+<dl class="py attribute">
+<dt id="fruit_app.models.Country.app_label">
+<code class="sig-name descname">app_label</code><a class="headerlink" href="#fruit_app.models.Country.app_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the app (required by Sphinx package)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fruit_app.models.Country.constraints">
+<code class="sig-name descname">constraints</code><a class="headerlink" href="#fruit_app.models.Country.constraints" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>the country_code must be 2 letters</p></li>
+<li><p>the name can only contain letters or spaces</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p><strong>Detailed Member Documentation</strong></p>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Validate country_code and convert to upper case</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Override default to call clean before super.save</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return JSON string of model dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Represent the model as a JSON dictionary of its members.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt>
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt>
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="commoditydata-model">
+<h2>CommodityData Model<a class="headerlink" href="#commoditydata-model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">fruit_app.models.</code><code class="sig-name descname">CommodityData</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Model for a CommodityData item.</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">country</code></dt>
+<dd><p>instance of Country model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ForeignKey</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">commodity</code></dt>
+<dd><p>name of the commodity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">fixed_overhead</code></dt>
+<dd><p>cost in U.S. dollars for a trade for this country and commodity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>decimal 8.2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">variable_cost</code></dt>
+<dd><p>cost in U.S. dollars for an additional ton</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>decimal 8.2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">Meta</code></dt>
+<dd><p>The Meta class contains Django model directives</p>
+<dl class="py attribute">
+<dt id="fruit_app.models.CommodityData.app_label">
+<code class="sig-name descname">app_label</code><a class="headerlink" href="#fruit_app.models.CommodityData.app_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the app (required by Sphinx package)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fruit_app.models.CommodityData.constraints">
+<code class="sig-name descname">constraints</code><a class="headerlink" href="#fruit_app.models.CommodityData.constraints" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>country and commodity combination must be  unique</p></li>
+<li><p>fixed_overhead must be &gt;= 0</p></li>
+<li><p>variable_cost must be &gt;= 0</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>country and commodity combination must be unique</p></li>
+<li><p>decimal values are limited to 99999.99</p></li>
+<li><p>fixed_overhead must be &gt;= 0</p></li>
+<li><p>variable_cost must be &gt;=0</p></li>
+</ul>
+</div>
+<dl class="simple">
+<dt>Example Item as JSON:</dt><dd><p>“COUNTRY”:”MX”, “COMMODITY”:”mango”, “FIXED_OVERHEAD”:”32.00”,
+“VARIABLE_COST”:”1.24”</p>
+</dd>
+</dl>
+<p><strong>Detailed Member Documentation</strong></p>
+<dl class="py method">
+<dt>
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return JSON string of model dictionary</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt>
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt>
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Represent the model as a JSON dictionary of its members.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">fruitpal</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#country-model">Country Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commoditydata-model">CommodityData Model</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to fruitpal’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Stefan Musarra.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/modules/models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -68,7 +68,9 @@ After cloning the git repo, the following directories are created:
   directory contains the configuration files and .rst files 
   (restructured text) for Sphinx.
   
-  This directory contains the files for the
+* build
+
+  This directory contains the output HTML files from Sphinx.
   
 The main directory includes a number of Bash scripts and configuration
 files:
@@ -179,5 +181,40 @@ models and the views.  They are run by:
 python3.8 manage.py test
 ```
 
+### Deployment and URLs
 
+This Django Project has been deployed at:
+
+[https://fruitpal.stefanzero.com](https://fruitpal.stefanzero.com)
+
+The relative URLs are:
+
+* /
+
+  Project landing page with links to API URLs
+  
+* /static/html/index.html
+
+  Documentation  
+
+* /api/v1/commoditydata/<pk>
+
+  GET, DELETE and UPDATE for a given primary key (id) of a commoditydata item
+
+* /api/v1/commiditydata
+
+  GET and POST for all items in commoditydata table
+  
+* /api/v1/countries/<country_code>
+
+  GET, DELETE and UPDATE for a given country_code of a country item
+
+* /api/v1/countries
+
+  GET and POST for all items in countries table
+
+* /api/v1/calculate/?COMMODITY=commodity&TONS=tons&PRICE=price
+
+  GET to calculate trade data for query parameters COMMODITY, TONS, and
+  PRICE
 

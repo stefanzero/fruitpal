@@ -157,7 +157,7 @@ def compute_costs(data, tons, price):
 
 
 @api_view(['GET', 'DELETE', 'PUT'])
-def get_delete_update_country(request, pk):
+def get_delete_update_country(request, country_code):
     """Restframework API get/delete/put endpoint the Country model
 
 
@@ -170,7 +170,7 @@ def get_delete_update_country(request, pk):
 
     """
     try:
-        country = Country.objects.get(pk=pk)
+        country = Country.objects.get(country_code=country_code)
     except Country.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 

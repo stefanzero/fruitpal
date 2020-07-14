@@ -3,7 +3,8 @@ Welcome to fruitpal's documentation!
 
 .. include:: README.rst
 
-Contents:
+Code Documentation
+==================
 
 .. toctree::
    :glob:

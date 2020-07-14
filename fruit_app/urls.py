@@ -19,7 +19,7 @@ urlpatterns = [
         name='get_commodities'
     ),
     url(
-        r'^api/v1/countries/(?P<pk>[0-9]+)$',
+        r'^api/v1/countries/(?P<country_code>[A-Z]{2})$',
         views.get_delete_update_country,
         name='get_delete_update_country'
     ),
