@@ -1,0 +1,4 @@
+Views
+======
+.. automodule:: fruit_app.views
+    :members:
