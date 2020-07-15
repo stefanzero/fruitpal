@@ -2,14 +2,30 @@ import json
 from rest_framework import status
 from django.test import TestCase, Client
 from django.urls import reverse
-from ..models import CommodityData
-from ..serializers import CommodityDataSerializer
+from ..models import CommodityData, Country
+from ..serializers import CommodityDataSerializer, CountrySerializer
 from .set_up import set_up_mango
 import decimal
 
 
 # initialize the APIClient app
 client = Client()
+
+class GetAllCountriesTest(TestCase):
+    """ Test module for GET all countries API """
+
+    def setUp(self):
+        set_up_mango()
+
+    def test_get_all_countries(self):
+        # get API response
+        response = client.get(reverse('get_post_country'))
+        # get data from db
+        countries = Country.objects.all()
+        serializer = CountrySerializer(countries, many=True)
+        self.assertEqual(response.data, serializer.data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
 
 class GetAllCommodityDataTest(TestCase):
     """ Test module for GET all commoditydata API """
@@ -28,7 +44,7 @@ class GetAllCommodityDataTest(TestCase):
 
 
 class CalculateTest(TestCase):
-    """ Test module for GET all commoditydata API """
+    """ Test module for calculate API """
 
     def setUp(self):
         set_up_mango()
