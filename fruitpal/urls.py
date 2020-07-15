@@ -22,14 +22,18 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf.urls.static import static
 from .views import home
 from .settings import STATIC_URL, STATIC_ROOT
+from django.views.generic.base import RedirectView
+
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     path('', home),
     path('home/', home),
+    re_path(r'^favicon\.ico$', favicon_view),
     url(r'^', include('fruit_app.urls')),
     url(
         r'^api-auth/',
